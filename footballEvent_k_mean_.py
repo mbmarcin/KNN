@@ -29,8 +29,7 @@ X = train.drop(['Name', 'Gender'], 1).astype(float).values
 #kmeans = KMeans(n_clusters=2, init='k-means++', max_iter=200, n_init=1, verbose=0, random_state=3425)
 kmeans = KMeans(n_clusters=4)
 kmeans.fit(X)
-#print(kmeans.labels_)
-#
+
 for i in range(0, X.shape[0]):
     if kmeans.labels_[i] == 1:
         c1 = pl.scatter(X[i, 0], X[i, 1], c='g', marker='p')
